@@ -1,14 +1,19 @@
 import customAxios from "../util/http";
-
+/**
+ * Get Student Data
+ * @returns 
+ */
 export const getData = () => {
-  return customAxios.get("https://jsonplaceholder.typicode.com/posts");
+  return customAxios.get("/api/products");
 };
 
-export const postData = () => {
-  return customAxios.post("/postData", {
-    name: "Sample",
-    contact: "0123456789",
-  });
+/**
+ * Post Student Data
+ * @param {Object} body 
+ * @returns 
+ */
+export const postData = (body) => {
+  return customAxios.post("/postData",body);
 };
 
 

@@ -5,16 +5,18 @@ import axios from 'axios';
 // The timeout is set to 10s. If the request takes longer than
 // that then the request will be aborted.
 const customAxios = axios.create({
-    baseURL: `https://example.com/api`,
+    baseURL:  process.env.REACT_APP_API_KEY,
     timeout: 10000, 
-    headers: { 'api-key': 'eyJz-CI6Ikp-4pWY-lhdCI6' }
+  
+    // headers: { 'api-key': 'eyJz-CI6Ikp-4pWY-lhdCI6' }
+   
 });
 
 // Step-2: Create request, response & error handlers
 const requestHandler = request => {
     // Token will be dynamic so we can use any app-specific way to always   
     // fetch the new token before making the call
-    request.headers.Authorization = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMTIzNDU2Nzg5IiwibmFtZSI6IlNhbXBsZSIsImlhdCI6MTUxNjIzODIzfQ.ZEBwz4pWYGqgFJc6DIi7HdTN0z5Pfs4Lcv4ZNwMr1rs';  
+    request.headers.authorization = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjUyYTNmOWQwMjQwNDMxMWUwNmIwNTI5IiwiZW1haWwiOiJnb3ZpbmRjaGF1cmFzaXlhMjMwQGdtYWlsLmNvbSIsImlhdCI6MTY5NzQ3NTMyOSwiZXhwIjoxNjk3NDgyNTI5fQ.PkBGcP3M53cMAxW71GmxDfFImoql0b5eR3wXK2QkxRE';  
   
     return request;
 };

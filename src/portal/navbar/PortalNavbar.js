@@ -10,7 +10,7 @@ const PortalNavbar = () => {
 
     const logout = () => {
         localStorage.clear();
-        navigate('/auth/login');
+        navigate('/auth');
     }
 
     return (
